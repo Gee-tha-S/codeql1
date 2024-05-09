@@ -1,0 +1,17 @@
+name: SAST Scan
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, codeql]
+  pull_request:
+    branches: [main, codeql, develop]
+
+jobs:
+  run_scan:
+    name: 'SAST Scan'
+    uses: FedEx/eai-3538069-GHAS/.github/workflows/codeQL.yml@main
+    with:
+      languages: "['java']"
+      jdk-version: '17'
+      maven-version: '3.3.3'
