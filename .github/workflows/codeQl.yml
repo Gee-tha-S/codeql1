@@ -1,0 +1,19 @@
+name: CodeQL SAST Scan
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, codeql]
+  pull_request:
+    branches: [main, development, codeql]
+  
+jobs:
+  run_scan:
+    name: 'SAST Scan'
+    uses: Gee-tha-S/codeql1/.github/workflows/codeQL.yml@main
+    with:
+      languages: "['java-kotlin']"
+      build-command: mvn clean install
+      jdk-version: '11'                  
+      maven-version: '3.8.6'  
+      node_version: '20.0' 
