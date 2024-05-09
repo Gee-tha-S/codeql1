@@ -10,7 +10,7 @@ on:
 jobs:
   run_scan:
     name: 'SAST Scan'
-    uses: Gee-tha-S/codeql1/.github/workflows/codeQL.yml@main
+    uses: codeql1/.github/workflows/codeQL.yml@main
     with:
       languages: "['java-kotlin']"
       jdk-version: '11'                  
