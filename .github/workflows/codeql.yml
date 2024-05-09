@@ -10,7 +10,7 @@ on:
 jobs:
   run_scan:
     name: 'SAST Scan'
-    uses: FedEx/eai-3538069-GHAS/.github/workflows/codeQL.yml@main
+    uses: Gee-tha-S/codeql1/.github/workflows/codeQL.yml@main
     with:
       languages: "['java']"
       jdk-version: '17'
