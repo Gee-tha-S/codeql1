@@ -14,7 +14,7 @@ on:
 
 jobs:
   call-burp-cicd-workflow:
-    uses: Gee-tha-S/eg1/.github/workflows/blank.yml@main
+    uses: Gee-tha-S/eg1/.github/workflows/blank.yaml@main
     with:
       token: ${{ secrets.GITHUB_TOKEN }}
       start-url: ${{ github.event.inputs.start-url }}  # This is passed as an input
