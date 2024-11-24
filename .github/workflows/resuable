@@ -1,0 +1,21 @@
+name: Testing Reusable Workflow from asr-burp-cicd
+
+on:
+#   push:
+#     branches:
+#      - main
+  workflow_dispatch:
+    inputs:
+      start-url:
+        description: 'URL to scan'
+        required: true
+        type: string
+        default: 'https://juice-shop.herokuapp.com/'
+
+jobs:
+  call-burp-cicd-workflow:
+    uses: niq-enterprise/asr-asr-burp-cicd/.github/workflows/burp.yml@testing/reusable-workflow
+    with:
+      token: ${{ secrets.GITHUB_TOKEN }}
+      start-url: ${{ github.event.inputs.start-url }}  # This is passed as an input
+    secrets: inherit  # This ensures that secrets are passed to the reusable workflow
