@@ -1,21 +1,14 @@
-name: Testing Reusable Workflow from asr-burp-cicd
+name: Call Reusable CI Workflow
 
 on:
-#   push:
-#     branches:
-#      - main
-  workflow_dispatch:
-    inputs:
-      start-url:
-        description: 'URL to scan'
-        required: true
-        type: string
-        default: 'https://juice-shop.herokuapp.com/'
+  push:
+    branches:
+      - main
 
 jobs:
-  call-burp-cicd-workflow:
+  use-reusable-workflow:
     uses: Gee-tha-S/eg1/.github/workflows/blank.yaml@main
     with:
-      token: ${{ secrets.GITHUB_TOKEN }}
-      start-url: ${{ github.event.inputs.start-url }}  # This is passed as an input
-    secrets: inherit  # This ensures that secrets are passed to the reusable workflow
+      example_input: 'Hello, world!'
+    secrets:
+      example_secret: ${{ secrets.EXAMPLE_SECRET }}
