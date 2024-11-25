@@ -1,4 +1,4 @@
-name: Call Reusable CI Workflow
+name: Call2 Reusable CI Workflow
 
 on:
   push:
